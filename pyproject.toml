@@ -1,0 +1,31 @@
+[project]
+name = "oop-python"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "pydantic[email]>=2.12.0",
+    "sqlalchemy>=2.0.44",
+]
+
+
+[tool.ruff]
+line-length = 100
+indent-width = 4
+target-version = "py313"
+
+[tool.ruff.lint]
+# 1. Enable flake8-bugbear (`B`) rules, in addition to the defaults.
+select = ["E4", "E7", "E9", "F", "B"]
+# 2. Avoid enforcing line-length violations (`E501`)
+ignore = ["E501", "B008"]
+extend-select = ["I"]
+# 3. Avoid trying to fix flake8-bugbear (`B`) violations.
+unfixable = ["B"]
+
+[tool.ruff.format]
+# 5. Use single quotes in `ruff format`.
+quote-style = "single"
+indent-style = "space"
+exclude = ["*.pyi"]
