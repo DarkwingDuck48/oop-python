@@ -6,6 +6,7 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "pydantic[email]>=2.12.0",
+    "pytest>=8.4.2",
     "sqlalchemy>=2.0.44",
 ]
 
@@ -29,3 +30,15 @@ unfixable = ["B"]
 quote-style = "single"
 indent-style = "space"
 exclude = ["*.pyi"]
+
+[tool.pyright]
+venvPath = ".venv"
+venv = "venv"
+
+[tool.pytest.ini_options]
+markers = [
+    "basic: marks tests as basic functionality tests",
+    "edge_case: marks tests as edge case tests",
+    "performance: marks tests as performance tests",
+    "slow: marks tests as slow operations",
+]

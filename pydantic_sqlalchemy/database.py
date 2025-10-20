@@ -7,14 +7,14 @@ class Base(DeclarativeBase):
 
 
 class DatabaseService:
-    def __init__(self, database_url: str = "sqlite:///messenger2.db"):
+    def __init__(self, database_url: str = 'sqlite:///messenger2.db'):
         self.engine = create_engine(database_url)
         self.session_factory = Session.bind = self.engine
 
     def create_tables(self):
         """Создает все таблицы в базе данных"""
         Base.metadata.create_all(self.engine)
-        print("✅ Таблицы созданы успешно!")
+        print('✅ Таблицы созданы успешно!')
 
     def get_session(self):
         """Возвращает сессию для работы с БД"""
